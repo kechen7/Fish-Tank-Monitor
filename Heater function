@@ -19,7 +19,8 @@ void controlHeater(int temperature, int userTemp)
 	int upperLimit = userTemp + 2; 
 	if (upperLimit > 80)
 	{
-		upperLimit = 80;
+		// switch relay off
+		// notify user of temperature limit reached or exceeded
 	}
 	if (temperature <= lowerLimit)
 	{
@@ -28,6 +29,11 @@ void controlHeater(int temperature, int userTemp)
 	if (temperature >= upperLimit)
 	{
 		// SWITCH RELAY OFF
+	}
+	if (temperature < 75)
+	{
+		// switch relay on
+		// notify user of temperature dropping below limit
 	}
 	return 0;
 	}
