@@ -1,0 +1,34 @@
+//Ask user for desired Temperature
+int askUserTemp()
+{
+  int userTemp;
+  Serial.println("Enter desired temperature");
+  userTemp = Serial.parseint();
+  
+  /* TODO
+  *Add error check if user did not enter a number, maybe add a range too
+  */
+  
+  return userTemp
+}
+
+// Turn heater on or off by switching relay on or off
+void controlHeater(int temperature, int userTemp)
+{
+  int lowerLimit = userTemp - 2;
+  int upperLimit = userTemp + 2; 
+  if (upperLimit > 80)
+  {
+    // SWITCH RELAY OFF
+    // NOTIFY USER OF HIGH TEMP
+  }
+  if (temperature <= lowerLimit)
+  {
+    // SWITCH RELAY ON
+  }
+  if (temperature >= upperLimit)
+  {
+    // SWITCH RELAY OFF
+  }
+  return 0;
+  }
